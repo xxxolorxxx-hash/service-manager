@@ -1,4 +1,4 @@
-import { MaterialForm } from './MaterialForm';
+import { MaterialForm, type MaterialFormData } from './MaterialForm';
 import { useAddMaterialCost } from '@/lib/hooks/useFinance';
 import { useToast } from '@/lib/hooks/useToast';
 
@@ -11,7 +11,7 @@ export function AddMaterialDialog({ orderId, onClose }: AddMaterialDialogProps) 
   const addMaterial = useAddMaterialCost();
   const { toast } = useToast();
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: MaterialFormData & { total: number }) => {
     try {
       await addMaterial({
         ...data,
@@ -23,7 +23,7 @@ export function AddMaterialDialog({ orderId, onClose }: AddMaterialDialogProps) 
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Nie udało się dodać materiału',

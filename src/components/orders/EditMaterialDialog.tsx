@@ -1,4 +1,4 @@
-import { MaterialForm } from './MaterialForm';
+import { MaterialForm, type MaterialFormData } from './MaterialForm';
 import { useUpdateMaterialCost } from '@/lib/hooks/useFinance';
 import { useToast } from '@/lib/hooks/useToast';
 import { MaterialCost } from '@/types';
@@ -12,7 +12,7 @@ export function EditMaterialDialog({ material, onClose }: EditMaterialDialogProp
   const updateMaterial = useUpdateMaterialCost();
   const { toast } = useToast();
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: MaterialFormData & { total: number }) => {
     try {
       await updateMaterial(material.id, data);
       toast({
@@ -21,7 +21,7 @@ export function EditMaterialDialog({ material, onClose }: EditMaterialDialogProp
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Nie udało się zaktualizować materiału',

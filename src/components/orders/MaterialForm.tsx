@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { MaterialCost } from '@/types';
-import { useEffect } from 'react';
 
 const materialSchema = z.object({
   name: z.string().min(1, 'Nazwa jest wymagana'),
@@ -15,7 +14,7 @@ const materialSchema = z.object({
   vatRate: z.number().min(0, 'VAT nie może być ujemny'),
 });
 
-type MaterialFormData = z.infer<typeof materialSchema>;
+export type MaterialFormData = z.infer<typeof materialSchema>;
 
 interface MaterialFormProps {
   initialData?: MaterialCost;
@@ -29,7 +28,6 @@ export function MaterialForm({ initialData, onSubmit, onClose, title }: Material
     register,
     handleSubmit,
     watch,
-    setValue,
     formState: { errors },
   } = useForm<MaterialFormData>({
     resolver: zodResolver(materialSchema),
