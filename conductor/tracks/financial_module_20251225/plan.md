@@ -11,7 +11,7 @@ W tej fazie skupimy się na backendzie (lokalnym) - rozszerzeniu schematu bazy d
 ## Faza 2: Interfejs zarządzania kosztami (Materiały)
 Implementacja UI do zarządzania kosztami materiałowymi w szczegółach zlecenia.
 
-- [ ] Task: Stwórz komponenty UI do wyświetlania listy materiałów w zleceniu (tabela/karty).
+- [~] Task: Stwórz komponenty UI do wyświetlania listy materiałów w zleceniu (tabela/karty).
 - [ ] Task: Zaimplementuj formularz (Dialog) dodawania i edycji kosztu materiałowego z walidacją (Zod).
 - [ ] Task: Zintegruj formularz ze storem i bazą danych.
 - [ ] Task: Conductor - User Manual Verification 'Faza 2: Interfejs zarządzania kosztami (Materiały)' (Protocol in workflow.md)
