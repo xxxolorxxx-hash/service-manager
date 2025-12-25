@@ -9,7 +9,7 @@ W tej fazie skupimy się na backendzie (lokalnym) - rozszerzeniu schematu bazy d
 - [x] Task: Zaimplementuj funkcje pomocnicze (utils) do obliczania sum, marży i zysku. Napisz testy jednostkowe dla logiki obliczeniowej. a0fdc3f
 - [x] Task: Conductor - User Manual Verification 'Faza 1: Rozbudowa warstwy danych i logiki biznesowej' (Protocol in workflow.md) f8ec545
 
-## Faza 2: Interfejs zarządzania kosztami (Materiały)
+## Faza 2: Interfejs zarządzania kosztami (Materiały) [checkpoint: 2d1b17c]
 
 Implementacja UI do zarządzania kosztami materiałowymi w szczegółach zlecenia.
 
