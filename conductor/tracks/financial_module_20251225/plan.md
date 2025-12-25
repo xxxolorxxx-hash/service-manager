@@ -13,7 +13,7 @@ Implementacja UI do zarządzania kosztami materiałowymi w szczegółach zleceni
 
 - [x] Task: Stwórz komponenty UI do wyświetlania listy materiałów w zleceniu (tabela/karty). 59f5686
 - [x] Task: Zaimplementuj formularz (Dialog) dodawania i edycji kosztu materiałowego z walidacją (Zod). bdc3c90
-- [ ] Task: Zintegruj formularz ze storem i bazą danych.
+- [x] Task: Zintegruj formularz ze storem i bazą danych. 3767f25
 - [ ] Task: Conductor - User Manual Verification 'Faza 2: Interfejs zarządzania kosztami (Materiały)' (Protocol in workflow.md)
 
 ## Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)
