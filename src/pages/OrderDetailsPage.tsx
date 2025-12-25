@@ -16,7 +16,8 @@ import {
     FileText,
     User,
     Phone,
-    Mail
+    Mail,
+    Image as ImageIcon
 } from 'lucide-react';
 import { formatCurrency, formatDate } from '@/lib/utils/formatters';
 import { useToast } from '@/lib/hooks/useToast';
@@ -26,6 +27,8 @@ import OrderGallery from '@/components/orders/OrderGallery';
 import { motion } from 'framer-motion';
 import { OrderChecklist } from '@/components/orders/OrderChecklist';
 import { MaterialsSection } from '@/components/orders/MaterialsSection';
+import { LaborSection } from '@/components/orders/LaborSection';
+import { OtherCostsSection } from '@/components/orders/OtherCostsSection';
 
 import { ChecklistItem } from '@/types';
 
@@ -168,6 +171,8 @@ export default function OrderDetailsPage() {
                     />
 
                     <MaterialsSection orderId={order.id} />
+                    <LaborSection orderId={order.id} />
+                    <OtherCostsSection orderId={order.id} />
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-bold flex items-center">
@@ -248,6 +253,3 @@ export default function OrderDetailsPage() {
         </motion.div>
     );
 }
-
-// Sprawdź brakujące importy
-import { Image as ImageIcon } from 'lucide-react';
