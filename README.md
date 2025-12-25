@@ -110,3 +110,4 @@ Projekt jest open-source.
 ## 🤝 Wsparcie
 
 Jeśli znajdziesz błąd lub masz sugestię, zgło issue na GitHub.
+# service-manager
