@@ -26,13 +26,13 @@ export default function TopNavigation() {
             key={item.id}
             onClick={() => navigate(`/${item.id}`)}
             className={cn(
-              'flex items-center space-x-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+              'group flex items-center space-x-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300',
               isActive
-                ? 'bg-primary text-primary-foreground'
-                : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                ? 'bg-primary/20 text-primary border border-primary/20 shadow-[0_0_20px_rgba(var(--primary),0.2)]'
+                : 'text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent'
             )}
           >
-            <Icon className="h-4 w-4" />
+            <Icon className={cn("h-5 w-5 transition-transform duration-300 group-hover:scale-110", isActive && "text-primary")} />
             <span>{item.label}</span>
           </button>
         );
