@@ -23,3 +23,4 @@
 - **Linting:** ESLint
 - **Type Checking:** TypeScript
 - **PWA:** Vite PWA Plugin
+- **Testing:** Vitest + React Testing Library
