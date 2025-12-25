@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useUIStore } from '@/lib/stores/uiStore';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils/cn';
 
 const container = {
   hidden: { opacity: 0 },
