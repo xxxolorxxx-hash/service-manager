@@ -1,5 +1,5 @@
 import Dexie from 'dexie';
-import type { Client, Order, Quote, AppSettings, Activity } from '@/types';
+import type { Client, Order, Quote, AppSettings, Activity, MaterialCost, LaborCost, OtherCost } from '@/types';
 
 export class ServiceDatabase extends Dexie {
   clients!: Dexie.Table<Client>;
@@ -7,6 +7,9 @@ export class ServiceDatabase extends Dexie {
   quotes!: Dexie.Table<Quote>;
   settings!: Dexie.Table<AppSettings>;
   activities!: Dexie.Table<Activity>;
+  materials!: Dexie.Table<MaterialCost>;
+  labor!: Dexie.Table<LaborCost>;
+  otherCosts!: Dexie.Table<OtherCost>;
 
   constructor() {
     super('ServiceAppDB');
@@ -17,6 +20,12 @@ export class ServiceDatabase extends Dexie {
       quotes: 'id, quoteNumber, clientId, orderId, status, createdAt',
       settings: 'key',
       activities: 'id, type, action, timestamp',
+    });
+
+    this.version(2).stores({
+      materials: 'id, orderId, createdAt',
+      labor: 'id, orderId, createdAt',
+      otherCosts: 'id, orderId, createdAt',
     });
   }
 }

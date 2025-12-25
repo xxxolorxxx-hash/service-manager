@@ -42,6 +42,36 @@ export interface Order {
   updatedAt: string;
 }
 
+export interface MaterialCost {
+  id: string;
+  orderId: string;
+  name: string;
+  quantity: number;
+  unit: string;
+  unitPrice: number;
+  vatRate: number;
+  total: number;
+  createdAt: string;
+}
+
+export interface LaborCost {
+  id: string;
+  orderId: string;
+  description: string;
+  hours: number;
+  ratePerHour: number;
+  total: number;
+  createdAt: string;
+}
+
+export interface OtherCost {
+  id: string;
+  orderId: string;
+  description: string;
+  cost: number;
+  createdAt: string;
+}
+
 
 export interface QuoteItem {
   id: string;
