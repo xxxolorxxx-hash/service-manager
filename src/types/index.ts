@@ -15,6 +15,12 @@ export interface Client {
   updatedAt: string;
 }
 
+export interface ChecklistItem {
+  id: string;
+  title: string;
+  isCompleted: boolean;
+}
+
 export interface Order {
   id: string;
   orderNumber: string;
@@ -27,9 +33,15 @@ export interface Order {
   endDate?: string;
   address?: string;
   notes?: string;
+  tasks?: ChecklistItem[];
+  images?: {
+    before: string[];
+    after: string[];
+  };
   createdAt: string;
   updatedAt: string;
 }
+
 
 export interface QuoteItem {
   id: string;

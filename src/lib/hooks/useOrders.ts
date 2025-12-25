@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db/schema';
-import type { Order, OrderStatus } from '@/types';
+import type { Order, OrderStatus, ChecklistItem } from '@/types';
 
 export function useOrders() {
   const orders = useLiveQuery(() => db.orders.toArray());
@@ -56,6 +56,15 @@ export function useUpdateOrder() {
   return async (id: string, updates: Partial<Order>) => {
     await db.orders.update(id, {
       ...updates,
+      updatedAt: new Date().toISOString(),
+    });
+  };
+}
+
+export function useUpdateOrderTasks() {
+  return async (id: string, tasks: ChecklistItem[]) => {
+    await db.orders.update(id, {
+      tasks,
       updatedAt: new Date().toISOString(),
     });
   };

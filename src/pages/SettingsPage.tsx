@@ -35,6 +35,7 @@ export default function SettingsPage() {
 
   useEffect(() => {
     if (settings) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         companyName: settings.companyName || '',
         companyAddress: settings.companyAddress || '',

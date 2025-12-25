@@ -39,6 +39,7 @@ export default function EditQuoteDialog({ quote, onClose }: EditQuoteDialogProps
       notes: quote.notes || '',
     });
     setItems(quote.items);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quote]);
 
   const addItem = () => {

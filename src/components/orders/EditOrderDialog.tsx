@@ -42,6 +42,7 @@ export default function EditOrderDialog({ order, onClose }: EditOrderDialogProps
       address: order.address || '',
       notes: order.notes || '',
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,7 +68,7 @@ export default function EditOrderDialog({ order, onClose }: EditOrderDialogProps
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Wystąpił błąd podczas aktualizacji zlecenia',
@@ -85,7 +86,7 @@ export default function EditOrderDialog({ order, onClose }: EditOrderDialogProps
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Wystąpił błąd podczas aktualizacji statusu',

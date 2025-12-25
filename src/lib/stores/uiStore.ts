@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
 interface UIState {
-  currentPage: 'dashboard' | 'clients' | 'orders' | 'quotes' | 'reports' | 'settings';
-  setCurrentPage: (page: 'dashboard' | 'clients' | 'orders' | 'quotes' | 'reports' | 'settings') => void;
+  currentPage: 'dashboard' | 'clients' | 'orders' | 'quotes' | 'reports' | 'settings' | 'calendar';
+  setCurrentPage: (page: 'dashboard' | 'clients' | 'orders' | 'quotes' | 'reports' | 'settings' | 'calendar') => void;
 
   selectedOrderId: string | null;
   setSelectedOrderId: (id: string | null) => void;

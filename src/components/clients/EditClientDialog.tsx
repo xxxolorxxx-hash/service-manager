@@ -34,6 +34,7 @@ export default function EditClientDialog({ client, onClose }: EditClientDialogPr
       nip: client.nip || '',
       notes: client.notes || '',
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [client]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,7 +57,7 @@ export default function EditClientDialog({ client, onClose }: EditClientDialogPr
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Wystąpił błąd podczas aktualizacji klienta',

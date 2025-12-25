@@ -4,9 +4,11 @@ import MobileLayout from '@/layouts/MobileLayout';
 import DashboardPage from '@/pages/DashboardPage';
 import ClientsPage from '@/pages/ClientsPage';
 import OrdersPage from '@/pages/OrdersPage';
+import OrderDetailsPage from '@/pages/OrderDetailsPage';
 import QuotesPage from '@/pages/QuotesPage';
 import ReportsPage from '@/pages/ReportsPage';
 import SettingsPage from '@/pages/SettingsPage';
+import CalendarPage from '@/pages/CalendarPage';
 import { initializeDatabase } from '@/lib/db/schema';
 import './styles/index.css';
 
@@ -26,12 +28,13 @@ function App() {
           <Route path="clients/:id" element={<ClientsPage />} />
           <Route path="orders" element={<OrdersPage />} />
           <Route path="orders/new" element={<OrdersPage />} />
-          <Route path="orders/:id" element={<OrdersPage />} />
+          <Route path="orders/:id" element={<OrderDetailsPage />} />
           <Route path="quotes" element={<QuotesPage />} />
           <Route path="quotes/new" element={<QuotesPage />} />
           <Route path="quotes/:id" element={<QuotesPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} />
+          <Route path="calendar" element={<CalendarPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

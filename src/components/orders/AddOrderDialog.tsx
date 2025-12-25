@@ -50,7 +50,7 @@ export default function AddOrderDialog({ onClose }: AddOrderDialogProps) {
         variant: 'success',
       });
       onClose();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Błąd',
         description: 'Wystąpił błąd podczas dodawania zlecenia',

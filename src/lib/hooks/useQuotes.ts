@@ -32,6 +32,7 @@ export function useQuoteById(id: string) {
 export function useCreateQuote() {
   return async (quote: Omit<Quote, 'id' | 'quoteNumber' | 'createdAt' | 'updatedAt' | 'subtotal' | 'vatTotal' | 'total'>) => {
     const items = quote.items || [];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { items: _, ...quoteData } = quote;
 
     const subtotal = items.reduce((sum, item) => sum + (item.quantity * item.unitPrice), 0);

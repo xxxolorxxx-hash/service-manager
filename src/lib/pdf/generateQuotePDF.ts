@@ -10,13 +10,13 @@ export async function generateQuotePDF(quote: Quote, client: Client, settings?: 
   const companyPhone = settings?.companyPhone || '';
   const companyEmail = settings?.companyEmail || '';
 
-  const doc = new jsPDF();  
+  const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const margin = 20;
 
   doc.setFontSize(20);
-  doc.text('KOSZTORYS', pageWidth / 2, 30, { align: 'center' });  
+  doc.text('KOSZTORYS', pageWidth / 2, 30, { align: 'center' });
   doc.setFontSize(12);
   doc.text(`Nr: ${quote.quoteNumber}`, pageWidth - margin, 50, { align: 'right' });
   doc.text(`Data: ${formatDate(quote.createdAt)}`, pageWidth - margin, 57, { align: 'right' });
@@ -77,7 +77,7 @@ export async function generateQuotePDF(quote: Quote, client: Client, settings?: 
     },
   });
 
-  const finalY = (doc as any).lastAutoTable.finalY + 15;
+  const finalY = (doc as jsPDF & { lastAutoTable: { finalY: number } }).lastAutoTable.finalY + 15;
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(10);

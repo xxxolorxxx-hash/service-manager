@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useClients, useDeleteClient, searchClients } from '@/lib/hooks/useClients';
+import { useClients, useDeleteClient } from '@/lib/hooks/useClients';
 import { useUIStore } from '@/lib/stores/uiStore';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';

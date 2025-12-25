@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useToast } from '@/lib/hooks/useToast';
 import { QuoteItem, QuoteStatus } from '@/types';
-import { Plus, Trash2, Calendar } from 'lucide-react';
+import { Plus, Trash2 } from 'lucide-react';
 import { addDays } from '@/lib/utils/formatters';
 
 interface AddQuoteDialogProps {
@@ -40,6 +40,7 @@ export default function AddQuoteDialog({ orderId, onClose }: AddQuoteDialogProps
         }));
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderId, orders]);
 
   const addItem = () => {
