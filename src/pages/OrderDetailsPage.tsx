@@ -25,6 +25,7 @@ import EditOrderDialog from '@/components/orders/EditOrderDialog';
 import OrderGallery from '@/components/orders/OrderGallery';
 import { motion } from 'framer-motion';
 import { OrderChecklist } from '@/components/orders/OrderChecklist';
+import { MaterialsSection } from '@/components/orders/MaterialsSection';
 
 import { ChecklistItem } from '@/types';
 
@@ -165,6 +166,8 @@ export default function OrderDetailsPage() {
                         tasks={order.tasks || []}
                         onUpdate={handleTasksUpdate}
                     />
+
+                    <MaterialsSection orderId={order.id} />
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-bold flex items-center">
