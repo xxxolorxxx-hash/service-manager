@@ -17,7 +17,8 @@ import {
     User,
     Phone,
     Mail,
-    Image as ImageIcon
+    Image as ImageIcon,
+    BarChart3
 } from 'lucide-react';
 import { formatCurrency, formatDate } from '@/lib/utils/formatters';
 import { useToast } from '@/lib/hooks/useToast';
@@ -29,6 +30,8 @@ import { OrderChecklist } from '@/components/orders/OrderChecklist';
 import { MaterialsSection } from '@/components/orders/MaterialsSection';
 import { LaborSection } from '@/components/orders/LaborSection';
 import { OtherCostsSection } from '@/components/orders/OtherCostsSection';
+import { FinancialSummary } from '@/components/orders/FinancialSummary';
+import { useMaterialsByOrder, useLaborByOrder, useOtherCostsByOrder } from '@/lib/hooks/useFinance';
 
 import { ChecklistItem } from '@/types';
 
@@ -42,6 +45,9 @@ export default function OrderDetailsPage() {
     const deleteOrder = useDeleteOrder();
     const { setCurrentPage } = useUIStore();
     const { toast } = useToast();
+    const { materials } = useMaterialsByOrder(id!);
+    const { labor } = useLaborByOrder(id!);
+    const { otherCosts } = useOtherCostsByOrder(id!);
 
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
@@ -170,9 +176,25 @@ export default function OrderDetailsPage() {
                         onUpdate={handleTasksUpdate}
                     />
 
-                    <MaterialsSection orderId={order.id} />
-                    <LaborSection orderId={order.id} />
-                    <OtherCostsSection orderId={order.id} />
+                    <div className="space-y-6">
+                        <h2 className="text-2xl font-bold flex items-center gap-2">
+                            <BarChart3 className="h-6 w-6 text-primary" />
+                            Analiza Finansowa
+                        </h2>
+
+                        <FinancialSummary
+                            revenue={order.value || 0}
+                            materials={materials}
+                            labor={labor}
+                            otherCosts={otherCosts}
+                        />
+
+                        <div className="grid gap-6 md:grid-cols-1">
+                            <MaterialsSection orderId={order.id} />
+                            <LaborSection orderId={order.id} />
+                            <OtherCostsSection orderId={order.id} />
+                        </div>
+                    </div>
 
                     <div className="space-y-4">
                         <h2 className="text-2xl font-bold flex items-center">

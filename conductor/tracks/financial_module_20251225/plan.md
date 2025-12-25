@@ -22,10 +22,10 @@ Implementacja UI do zarządzania kosztami materiałowymi w szczegółach zleceni
 
 Implementacja UI do zarządzania robocizną i innymi kosztami.
 
-- [~] Task: Stwórz komponenty UI do wyświetlania listy kosztów robocizny i innych.
-- [ ] Task: Zaimplementuj formularze dodawania/edycji kosztów robocizny i innych kosztów.
-- [ ] Task: Zintegruj formularze ze storem.
-- [ ] Task: Conductor - User Manual Verification 'Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)' (Protocol in workflow.md)
+- [x] Task: Stwórz komponenty UI do wyświetlania listy kosztów robocizny i innych. 12f892f
+- [x] Task: Zaimplementuj formularze dodawania/edycji kosztów robocizny i innych kosztów. 12f892f
+- [x] Task: Zintegruj formularze ze storem. 12f892f
+- [~] Task: Conductor - User Manual Verification 'Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)' (Protocol in workflow.md)
 
 ## Faza 4: Podsumowanie finansowe i analiza rentowności
 
