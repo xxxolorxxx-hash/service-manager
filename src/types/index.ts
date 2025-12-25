@@ -1,0 +1,80 @@
+export type OrderStatus = 'nowe' | 'w trakcie' | 'ukończone' | 'anulowane' | 'oczekujące';
+
+export type QuoteStatus = 'projekt' | 'wyslane' | 'zaakceptowane' | 'odrzucone';
+
+export interface Client {
+  id: string;
+  name: string;
+  company?: string;
+  email?: string;
+  phone: string;
+  address?: string;
+  nip?: string;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Order {
+  id: string;
+  orderNumber: string;
+  clientId: string;
+  title: string;
+  description: string;
+  status: OrderStatus;
+  value?: number;
+  startDate: string;
+  endDate?: string;
+  address?: string;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface QuoteItem {
+  id: string;
+  name: string;
+  description?: string;
+  quantity: number;
+  unit: string;
+  unitPrice: number;
+  vatRate: number;
+  total: number;
+}
+
+export interface Quote {
+  id: string;
+  quoteNumber: string;
+  clientId: string;
+  orderId?: string;
+  status: QuoteStatus;
+  items: QuoteItem[];
+  subtotal: number;
+  vatTotal: number;
+  total: number;
+  validUntil?: string;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AppSettings {
+  companyName: string;
+  companyAddress: string;
+  companyNip?: string;
+  companyPhone?: string;
+  companyEmail?: string;
+  defaultVatRate: number;
+  quoteValidDays: number;
+  currency: string;
+  dateFormat: string;
+}
+
+export interface Activity {
+  id: string;
+  type: 'order' | 'quote' | 'client';
+  action: 'created' | 'updated' | 'deleted';
+  itemId: string;
+  itemName: string;
+  timestamp: string;
+}

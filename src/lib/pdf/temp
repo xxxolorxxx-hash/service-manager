@@ -1,0 +1,1 @@
+  doc.save(`kosztorys-${quote.quoteNumber.replace(/\//g, \x27-\x27)}.pdf`);
