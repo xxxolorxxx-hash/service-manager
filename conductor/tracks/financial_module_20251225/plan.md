@@ -5,7 +5,7 @@ W tej fazie skupimy się na backendzie (lokalnym) - rozszerzeniu schematu bazy d
 
 - [x] Task: Zaktualizuj schemat bazy danych Dexie o tabele kosztów (materials, labor, other) oraz powiązania ze zleceniami. Zdefiniuj typy TypeScript. 63c1b51
 - [x] Task: Zaktualizuj store Zustand (`useOrders` lub nowy `useFinance`) o akcje do dodawania, edycji i usuwania kosztów. 87e7e26
-- [ ] Task: Zaimplementuj funkcje pomocnicze (utils) do obliczania sum, marży i zysku. Napisz testy jednostkowe dla logiki obliczeniowej.
+- [x] Task: Zaimplementuj funkcje pomocnicze (utils) do obliczania sum, marży i zysku. Napisz testy jednostkowe dla logiki obliczeniowej. a0fdc3f
 - [ ] Task: Conductor - User Manual Verification 'Faza 1: Rozbudowa warstwy danych i logiki biznesowej' (Protocol in workflow.md)
 
 ## Faza 2: Interfejs zarządzania kosztami (Materiały)
