@@ -3,7 +3,7 @@
 ## Faza 1: Rozbudowa warstwy danych i logiki biznesowej
 W tej fazie skupimy się na backendzie (lokalnym) - rozszerzeniu schematu bazy danych Dexie.js oraz logiki w storeach Zustand do obsługi kosztów.
 
-- [ ] Task: Zaktualizuj schemat bazy danych Dexie o tabele kosztów (materials, labor, other) oraz powiązania ze zleceniami. Zdefiniuj typy TypeScript.
+- [x] Task: Zaktualizuj schemat bazy danych Dexie o tabele kosztów (materials, labor, other) oraz powiązania ze zleceniami. Zdefiniuj typy TypeScript. 63c1b51
 - [ ] Task: Zaktualizuj store Zustand (`useOrders` lub nowy `useFinance`) o akcje do dodawania, edycji i usuwania kosztów.
 - [ ] Task: Zaimplementuj funkcje pomocnicze (utils) do obliczania sum, marży i zysku. Napisz testy jednostkowe dla logiki obliczeniowej.
 - [ ] Task: Conductor - User Manual Verification 'Faza 1: Rozbudowa warstwy danych i logiki biznesowej' (Protocol in workflow.md)
