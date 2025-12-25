@@ -18,20 +18,20 @@ Implementacja UI do zarządzania kosztami materiałowymi w szczegółach zleceni
 - [x] Task: Zintegruj formularz ze storem i bazą danych. 3767f25
 - [x] Task: Conductor - User Manual Verification 'Faza 2: Interfejs zarządzania kosztami (Materiały)' (Protocol in workflow.md) 307d0bf
 
-## Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)
+## Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne) [checkpoint: 12f892f]
 
 Implementacja UI do zarządzania robocizną i innymi kosztami.
 
-- [x] Task: Stwórz komponenty UI do wyświetlania listy kosztów robocizny i innych. 12f892f
+- [x] Task: Stwórz komponent UI do wyświetlania listy kosztów robocizny i innych. 12f892f
 - [x] Task: Zaimplementuj formularze dodawania/edycji kosztów robocizny i innych kosztów. 12f892f
 - [x] Task: Zintegruj formularze ze storem. 12f892f
-- [~] Task: Conductor - User Manual Verification 'Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Faza 3: Interfejs zarządzania kosztami (Robocizna i Inne)' (Protocol in workflow.md) 12f892f
 
-## Faza 4: Podsumowanie finansowe i analiza rentowności
+## Faza 4: Podsumowanie finansowe i analiza rentowności [checkpoint: b352008]
 
 Implementacja widoku podsumowującego finanse zlecenia.
 
-- [ ] Task: Stwórz komponent `FinancialSummary` wyświetlający przychód, sumę kosztów, zysk i marżę.
-- [ ] Task: Zaimplementuj wizualne wskaźniki rentowności (np. kolorowanie marży).
-- [ ] Task: Dodaj sekcję "Finanse" do widoku szczegółów zlecenia (`OrderDetailsPage`), integrując wszystkie nowe komponenty.
-- [ ] Task: Conductor - User Manual Verification 'Faza 4: Podsumowanie finansowe i analiza rentowności' (Protocol in workflow.md)
+- [x] Task: Stwórz komponent `FinancialSummary` wyświetlający przychód, sumę kosztów, zysk i marżę. b352008
+- [x] Task: Zaimplementuj wizualne wskaźniki rentowności (np. kolorowanie marży). b352008
+- [x] Task: Dodaj sekcję "Finanse" do widoku szczegółów zlecenia (`OrderDetailsPage`), integrując wszystkie nowe komponenty. b352008
+- [x] Task: Conductor - User Manual Verification 'Faza 4: Podsumowanie finansowe i analiza rentowności' (Protocol in workflow.md) b352008
