@@ -63,6 +63,7 @@ export async function initializeDatabase() {
         quoteValidDays: 30,
         currency: 'PLN',
         dateFormat: 'DD MMM YYYY',
+        theme: 'dark',
       } as unknown as AppSettings,
     ]);
   }

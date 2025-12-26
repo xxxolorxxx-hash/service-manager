@@ -10,12 +10,23 @@ import ReportsPage from '@/pages/ReportsPage';
 import SettingsPage from '@/pages/SettingsPage';
 import CalendarPage from '@/pages/CalendarPage';
 import { initializeDatabase } from '@/lib/db/schema';
+import { useSettings } from '@/lib/hooks/useApp';
 import './styles/index.css';
 
 function App() {
+  const { settings } = useSettings();
+
   useEffect(() => {
     initializeDatabase();
   }, []);
+
+  useEffect(() => {
+    if (settings?.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [settings?.theme]);
 
   return (
     <BrowserRouter basename="/service-manager">

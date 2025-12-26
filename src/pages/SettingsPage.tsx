@@ -27,6 +27,7 @@ export default function SettingsPage() {
     quoteValidDays: 30,
     currency: 'PLN',
     dateFormat: 'DD MMM YYYY',
+    theme: 'dark' as 'light' | 'dark',
   });
 
   useEffect(() => {
@@ -46,6 +47,7 @@ export default function SettingsPage() {
         quoteValidDays: settings.quoteValidDays || 30,
         currency: settings.currency || 'PLN',
         dateFormat: settings.dateFormat || 'DD MMM YYYY',
+        theme: settings.theme || 'dark',
       });
     }
   }, [settings]);
@@ -199,6 +201,28 @@ export default function SettingsPage() {
                 <Input
                   value={formData.currency}
                   onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium">Motyw</label>
+                <select
+                  value={formData.theme}
+                  onChange={(e) => setFormData({ ...formData, theme: e.target.value as 'light' | 'dark' })}
+                  className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <option value="light">Jasny</option>
+                  <option value="dark">Ciemny</option>
+                </select>
+              </div>
+              <div>
+                <label className="text-sm font-medium">Format daty</label>
+                <Input
+                  value={formData.dateFormat}
+                  onChange={(e) => setFormData({ ...formData, dateFormat: e.target.value })}
+                  placeholder="DD MMM YYYY"
                 />
               </div>
             </div>

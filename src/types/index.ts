@@ -110,6 +110,7 @@ export interface AppSettings {
   quoteValidDays: number;
   currency: string;
   dateFormat: string;
+  theme: 'light' | 'dark';
 }
 
 export interface Activity {
