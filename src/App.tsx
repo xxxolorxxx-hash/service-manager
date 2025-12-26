@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/service-manager">
       <Routes>
         <Route path="/" element={<MobileLayout />}>
           <Route index element={<DashboardPage />} />
