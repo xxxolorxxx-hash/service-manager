@@ -1,11 +1,12 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import BottomNavigation from './BottomNavigation';
 import { useUIStore } from '@/lib/stores/uiStore';
-import { ClipboardList } from 'lucide-react';
+import { ClipboardList, Settings } from 'lucide-react';
 
 export default function MobileLayout() {
   const { currentPage } = useUIStore();
+  const navigate = useNavigate();
 
   const getPageTitle = () => {
     switch (currentPage) {
@@ -29,7 +30,13 @@ export default function MobileLayout() {
           </div>
           <h1 className="text-lg font-bold tracking-tight">{getPageTitle()}</h1>
         </div>
-        <div className="h-8 w-8 rounded-full bg-white/10 border border-white/10" /> {/* Placeholder for Profile */}
+        <button
+          onClick={() => navigate('/settings')}
+          className="h-8 w-8 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+          title="Ustawienia"
+        >
+          <Settings className="h-4 w-4 text-muted-foreground" />
+        </button>
       </header>
 
       <main className="flex-1 overflow-x-hidden">

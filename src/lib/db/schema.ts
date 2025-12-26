@@ -23,6 +23,11 @@ export class ServiceDatabase extends Dexie {
     });
 
     this.version(2).stores({
+      clients: 'id, name, phone, email, company, createdAt',
+      orders: 'id, orderNumber, clientId, status, startDate, createdAt',
+      quotes: 'id, quoteNumber, clientId, orderId, status, createdAt',
+      settings: 'key',
+      activities: 'id, type, action, timestamp',
       materials: 'id, orderId, createdAt',
       labor: 'id, orderId, createdAt',
       otherCosts: 'id, orderId, createdAt',
@@ -33,7 +38,19 @@ export class ServiceDatabase extends Dexie {
 export const db = new ServiceDatabase();
 
 export async function initializeDatabase() {
-  await db.open();
+  try {
+    await db.open();
+  } catch (error: any) {
+    // Handle schema upgrade errors by resetting the database in development
+    if (error.name === 'UpgradeError' || error.name === 'SchemaError') {
+      console.warn('Database schema mismatch, resetting database...', error);
+      await db.delete();
+      await db.open();
+    } else {
+      console.error('Failed to open database:', error);
+      throw error;
+    }
+  }
 
   const settingsCount = await db.settings.count();
   if (settingsCount === 0) {

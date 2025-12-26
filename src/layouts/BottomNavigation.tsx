@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useUIStore } from '@/lib/stores/uiStore';
-import { Home, Users, ClipboardList, FileText, Calendar } from 'lucide-react';
+import { Home, Users, ClipboardList, FileText, Calendar, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { motion } from 'framer-motion';
 
@@ -10,6 +10,7 @@ const navItems = [
   { id: 'clients' as const, label: 'Klienci', icon: Users },
   { id: 'orders' as const, label: 'Zlecenia', icon: ClipboardList },
   { id: 'quotes' as const, label: 'Kosztorysy', icon: FileText },
+  { id: 'settings' as const, label: 'Ustawienia', icon: Settings },
 ];
 
 export default function BottomNavigation() {

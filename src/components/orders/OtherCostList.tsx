@@ -52,6 +52,7 @@ export function OtherCostList({ entries, onDelete, onEdit }: OtherCostListProps)
                                                     size="icon"
                                                     onClick={() => onEdit(entry)}
                                                     className="h-8 w-8 text-muted-foreground hover:text-primary hover:bg-primary/10"
+                                                    aria-label="Edytuj"
                                                 >
                                                     <Edit className="h-4 w-4" />
                                                 </Button>
@@ -60,6 +61,7 @@ export function OtherCostList({ entries, onDelete, onEdit }: OtherCostListProps)
                                                     size="icon"
                                                     onClick={() => onDelete(entry.id)}
                                                     className="h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                                                    aria-label="Usuń"
                                                 >
                                                     <Trash2 className="h-4 w-4" />
                                                 </Button>
